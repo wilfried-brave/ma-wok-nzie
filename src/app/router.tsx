@@ -1,6 +1,8 @@
 import { Navigate, createBrowserRouter } from 'react-router-dom'
 import RootLayout from '../layouts/RootLayout'
 import HomePage from '../pages/HomePage'
+import MenuPage from '../pages/MenuPage'
+import AboutPage from '../pages/AboutPage'
 import ComingSoonPage from '../pages/ComingSoonPage'
 import NotFoundPage from '../pages/NotFoundPage'
 
@@ -11,9 +13,9 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: 'menu', element: <Navigate to="/menu/plats" replace /> },
-      { path: 'menu/:categoryId', element: <ComingSoonPage title="Menu" step={2} /> },
+      { path: 'menu/:categoryId', element: <MenuPage /> },
       { path: 'cave', element: <ComingSoonPage title="La Cave Goûtes de Dieu" step={2} /> },
-      { path: 'a-propos', element: <ComingSoonPage title="À propos de nous" step={3} /> },
+      { path: 'a-propos', element: <AboutPage /> },
       { path: 'reservation', element: <ComingSoonPage title="Réservation" step={3} /> },
       { path: 'contact', element: <ComingSoonPage title="Nous contacter" step={3} /> },
       { path: 'connexion', element: <ComingSoonPage title="Authentification" step={4} /> },

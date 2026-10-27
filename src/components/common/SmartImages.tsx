@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { cn } from '../../lib/utils'
 
 interface SmartImageProps {
-  src: string
+  src?: string
   alt: string
   className?: string
   /** Texte affiché si l'image est absente (par défaut : alt) */
@@ -14,7 +14,7 @@ interface SmartImageProps {
 export default function SmartImage({ src, alt, className, label, priority }: SmartImageProps) {
   const [failed, setFailed] = useState(false)
 
-  if (failed) {
+  if (failed || !src) {
     return (
       <div
         role="img"
